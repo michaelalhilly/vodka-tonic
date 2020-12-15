@@ -141,7 +141,7 @@ fi
 
 if [[ "$1" = "run" && "$#" -gt 1 ]]; then
 	
-	eval docker run -itd $OPTIONS --name $NAME $NAME $@
+	eval docker run -itd "${@:3}" --name $NAME $NAME
 	exit 0
 fi
 
