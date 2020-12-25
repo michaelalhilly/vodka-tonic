@@ -2,6 +2,10 @@
 
 Docker companion so the only software you need to install directly on your device is Docker and libraries not supported by Docker (i.e. XCode).
 
+# Todos
+
+- vt push: Adds, commits, and pushes git changes in a single command.
+
 ## Setup
 
 - Clone or download this project into your directory of choice

@@ -1,0 +1,9 @@
+{
+  "name": "vodka-tonic",
+  "version": "1.0.0",
+  "description": "Docker companion so the only software you need to install directly on your device is Docker",
+  "keywords": [ "docker" ],
+  "author": "michaelalhilly@gmail.com",
+  "license": "ISC",
+  "vt": "-v ~/.ssh:/root/.ssh -v ~/.gitconfig:/root/.gitconfig -v $(PWD):/home -w /home"
+}

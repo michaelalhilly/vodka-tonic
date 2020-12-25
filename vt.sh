@@ -133,6 +133,13 @@ if [ "$1" = "build" ]; then
 	exit 0
 fi
 
+if [[ "$1" = "rli" ]]; then
+
+	eval docker run -itd $OPTIONS --name $NAME $NAME
+	docker exec -it $NAME /bin/bash
+	exit 0
+fi
+
 if [[ "$1" = "run" && "$#" = 1 ]]; then
 
 	eval docker run -itd $OPTIONS --name $NAME $NAME
@@ -219,6 +226,20 @@ fi
 if [ "$1" = "images" ]; then
 
 	docker images
+	exit 0
+fi
+
+if [[ "$1" = "gitpush" && "$#" = 1 ]]; then
+
+	echo "Please add a message."
+	exit 10
+fi
+
+if [[ "$1" = "gitpush" && "$#" -gt 1 ]]; then
+
+	git add .
+	git commit -m "$2"
+	git push
 	exit 0
 fi
 
