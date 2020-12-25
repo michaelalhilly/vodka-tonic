@@ -41,6 +41,11 @@ if [[ "$1" = "--help" || "$1" = "-h" ]]; then
 	printf "List Docker images.";
 	printf "\n\n\n"
 
+	printf "vt push";
+	printf "\n\n"
+	printf "Adds, commits, and pushes all changes to project's git repo.";
+	printf "\n\n\n"
+
 	printf "vt rebuild";
 	printf "\n\n"
 	printf "Removes and rebuilds project image.";
@@ -64,6 +69,11 @@ if [[ "$1" = "--help" || "$1" = "-h" ]]; then
 	printf "vt run";
 	printf "\n\n"
 	printf "Runs project container.";
+	printf "\n\n\n"
+
+	printf "vt runcli";
+	printf "\n\n"
+	printf "Runs container and starts its command line.";
 	printf "\n\n\n"
 
 	printf "vt start";
@@ -133,7 +143,7 @@ if [ "$1" = "build" ]; then
 	exit 0
 fi
 
-if [[ "$1" = "rli" ]]; then
+if [[ "$1" = "runcli" ]]; then
 
 	eval docker run -itd $OPTIONS --name $NAME $NAME
 	docker exec -it $NAME /bin/bash
@@ -229,13 +239,13 @@ if [ "$1" = "images" ]; then
 	exit 0
 fi
 
-if [[ "$1" = "gitpush" && "$#" = 1 ]]; then
+if [[ "$1" = "push" && "$#" = 1 ]]; then
 
 	echo "Please add a message."
 	exit 10
 fi
 
-if [[ "$1" = "gitpush" && "$#" -gt 1 ]]; then
+if [[ "$1" = "push" && "$#" -gt 1 ]]; then
 
 	git add .
 	git commit -m "$2"

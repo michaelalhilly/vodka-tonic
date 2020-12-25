@@ -83,21 +83,15 @@ Builds image.
 
 
 ```
-vt run
-```
-Creates container from image.
-
-
-```
 vt containers
 ```
 Lists Docker containers in case you get in the habit of using vt.
 
 
 ```
-vt images
+vt cli
 ```
-Lists Docker images in case you get in the habit of using vt.
+Starts container's shell session.
 
 
 ```
@@ -107,27 +101,21 @@ Accesses the container's command line.
 
 
 ```
-vt stop
+vt images
 ```
-Stops container.
+Lists Docker images in case you get in the habit of using vt.
 
 
 ```
-vt rm
+vt install
 ```
-Removes container.
+Installs npm package.
 
 
 ```
-vt rmi
+vt push
 ```
-Removes image.
-
-
-```
-vt cli
-```
-Starts container's shell session.
+Adds, commits, and pushes all changes to project's git repo.
 
 
 ```
@@ -143,15 +131,39 @@ Stops and restarts image.
 
 
 ```
+vt rm
+```
+Removes container.
+
+
+```
+vt rmi
+```
+Removes image.
+
+
+```
+vt run
+```
+Creates container from image.
+
+
+```
+vt runcli
+```
+Runs container and starts its command line.
+
+
+```
 vt start
 ```
 Runs npm start script.
 
 
 ```
-vt install
+vt stop
 ```
-Installs npm package.
+Stops container.
 
 
 ```
